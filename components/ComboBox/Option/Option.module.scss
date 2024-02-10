@@ -1,0 +1,16 @@
+.Option {
+  content: '';
+
+  padding: 4px 8px;
+  background-color: white;
+  color: var(--color-dark);
+
+  &.Focused {
+    background-color: color-mix(in srgb, var(--color-light), black 10%);
+  }
+
+  &.Selected {
+    background-color:  var(--color-em);
+    color: var(--color-em-main);
+  }
+}
