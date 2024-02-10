@@ -5,7 +5,7 @@
 ### 1. Clone this repository
 
 ```bash
-git clone https://github.com/ryotarofr/photographic-subject-app.git
+git clone https://github.com/ryotarofr/notebook.git
 ```
 
 ### 2. Install package locally
