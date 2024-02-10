@@ -1,0 +1,120 @@
+.Input {
+  content: '';
+  width: max-content;
+
+  &:not(:focus-within, :hover) {
+    .ValueControllButton {
+      display: none;
+    }
+
+    .ToolTip {
+      display: none;
+    }
+  }
+}
+
+.Label {
+  content: '';
+}
+
+.InputContainer {
+  content: '';
+  position: relative;
+  width: max-content;
+  height: 100%;
+}
+
+.InputSizeDetector {
+  content: '';
+  min-width: 1em;
+  line-height: 100%;
+
+  padding-left: .25em;
+  opacity: 0;
+
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+
+  &::before {
+    content: '';
+  }
+
+  &:empty::before {
+    content: attr(data-placeholder);
+  }
+}
+
+.RawInput {
+  content: '';
+  width: 100%;
+
+  box-sizing: border-box;
+  background-color: color-mix(in srgb, var(--color-mode) 70%, white);
+  box-shadow: inset 0 0 2px hsla(var(--color-main-hsl), .5);
+  outline: unset;
+  border-bottom: 2px solid hsla(var(--color-main-hsl), 20%);
+  transition: 0.15s;
+
+  &:hover,
+  &:focus-within {
+    border-bottom-color: var(--color-em);
+  }
+
+  &:invalid {
+    border-bottom-color: var(--color-warn);
+  }
+
+  &:not(.Simplified) {
+    padding-left: .25em;
+
+    text-align: inherit;
+  }
+}
+
+.Simplified {
+  display: inline-block;
+
+  &[type='number']::-webkit-inner-spin-button,
+  &[type='number']::-webkit-outer-spin-button {
+    position: absolute;
+  }
+}
+
+.Stretch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.ValueControllButton {
+  content: '';
+
+  margin-left: .1em;
+  padding: .05em;
+  opacity: 0.6;
+  font-size: .8em;
+
+  display: inline-flex;
+  align-items: center;
+
+  > svg {
+    width: 1em;
+    height: 1em;
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.Hidden {
+  display: none;
+}
+
+input[type='file']::after {
+  content: '';
+}
