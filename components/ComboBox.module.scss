@@ -1,0 +1,33 @@
+.ComboBox {
+  content: '';
+}
+
+.ComboBoxThumb {
+  content: '';
+  cursor: pointer;
+  position: absolute;
+  top: .2em;
+  right: 4px;
+
+  display: inline;
+  font-size: .75em;
+}
+
+.DataList{
+  content: '';
+  position: absolute;
+  width: max-content;
+  min-width: 100%;
+  max-height: 120px;
+  z-index: 99999;
+
+  margin-top: 4px;
+  border: 1px solid black;
+  border-radius: .5em;
+
+  overflow: auto;
+}
+
+.Hidden {
+  display: none;
+}

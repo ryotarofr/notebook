@@ -17,10 +17,11 @@ import { Label } from "@/components/ui/form/Label";
 import { Warnings } from "@/components/ui/form/Warnings";
 import { ToolTip } from "@/components/ui/ToolTip";
 import { getMappedObject } from "@/fn/getMappedObject";
-import { Override } from "@/type/Override";
+
 
 import { WarnMap, getWarnMap } from "./getWarnMap";
 import styles from "./Input.module.scss";
+import { Override } from "@/types/override";
 
 /**
  * 入力欄のスタイル統一と挙動実装のための汎用`<input />`ラッパー。
@@ -135,15 +136,15 @@ export const Input = ({
   const clearValue = () => setCurrentValue("");
   const showClearButton
     = propsShowClearButton
-      && readOnly !== true
-      && currentValue != null
-      && currentValue !== ""
-      && label;
+    && readOnly !== true
+    && currentValue != null
+    && currentValue !== ""
+    && label;
   const resetValue = () => setCurrentValue(wrappedProps.defaultValue?.toString() ?? value ?? "");
   const showResetButton
     = value
-      && readOnly !== true
-      && currentValue !== value;
+    && readOnly !== true
+    && currentValue !== value;
 
   const onChange: ChangeEventHandler<HTMLInputElement> = (event) => {
     wrappedProps.onChange?.(event);
